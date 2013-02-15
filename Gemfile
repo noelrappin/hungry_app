@@ -9,6 +9,8 @@ gem 'rails', '3.2.12'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+gem 'active_model_serializers'
+gem 'haml-rails'
 
 
 # Gems used only for assets and not required
@@ -40,13 +42,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem "capybara", :group => [:development, :test]
-group :test do
-  gem "cucumber-rails", :require => false
-  gem "capybara"
-  gem "database_cleaner"
-end
-
 guard_notifications = false
 group :development do
   case HOST_OS
@@ -64,16 +59,27 @@ group :development do
 end
 
 group :development do
-  gem "guard-livereload"
   gem "yajl-ruby"
-  gem "rack-livereload"
   gem "guard-bundler"
   gem "guard-cucumber"
   gem "guard-rspec"
+  gem "binding_of_caller"
+  gem "better_errors"
+  gem "powify"
 end
 
-gem "mysql2"
-gem "rspec-rails", :group => [:development, :test]
+group :development, :test do
+  gem "rspec-rails"
+  gem "rspec"
+  gem "capybara"
+  gem "cucumber-rails", :require => false
+  gem "database_cleaner"
+  gem 'factory_girl_rails'
+  gem "fivemat"
+  gem "pry"
+  gem "awesome_print"
+end
+
 group :assets do
   gem "twitter-bootstrap-rails"
   gem "less-rails"
