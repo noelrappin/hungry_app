@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130215173345) do
+ActiveRecord::Schema.define(:version => 20130215191802) do
+
+  create_table "coupons", :force => true do |t|
+    t.integer  "restaurant_id"
+    t.float    "normal_price"
+    t.float    "sale_price"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "coupons", ["restaurant_id"], :name => "index_coupons_on_restaurant_id"
 
   create_table "ratings", :force => true do |t|
     t.integer  "user_id"

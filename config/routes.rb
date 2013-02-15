@@ -1,4 +1,7 @@
 HungryApp::Application.routes.draw do
+  resources :coupons
+
+
   resources :ratings
 
 
