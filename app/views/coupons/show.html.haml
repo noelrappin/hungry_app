@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Restaurant:
+  = @coupon.restaurant
+%p
+  %b Normal price:
+  = @coupon.normal_price
+%p
+  %b Sale price:
+  = @coupon.sale_price
+%p
+  %b Start date:
+  = @coupon.start_date
+%p
+  %b End date:
+  = @coupon.end_date
+
+= link_to 'Edit', edit_coupon_path(@coupon)
+\|
+= link_to 'Back', coupons_path

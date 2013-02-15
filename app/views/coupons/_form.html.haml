@@ -1,0 +1,25 @@
+= form_for @coupon do |f|
+  - if @coupon.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@coupon.errors.count, "error")} prohibited this coupon from being saved:"
+      %ul
+        - @coupon.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :restaurant
+    = f.text_field :restaurant
+  .field
+    = f.label :normal_price
+    = f.text_field :normal_price
+  .field
+    = f.label :sale_price
+    = f.text_field :sale_price
+  .field
+    = f.label :start_date
+    = f.date_select :start_date
+  .field
+    = f.label :end_date
+    = f.date_select :end_date
+  .actions
+    = f.submit 'Save'

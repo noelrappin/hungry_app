@@ -1,0 +1,27 @@
+%h1 Listing coupons
+
+%table
+  %tr
+    %th Restaurant
+    %th Normal price
+    %th Sale price
+    %th Start date
+    %th End date
+    %th
+    %th
+    %th
+
+  - @coupons.each do |coupon|
+    %tr
+      %td= coupon.restaurant
+      %td= coupon.normal_price
+      %td= coupon.sale_price
+      %td= coupon.start_date
+      %td= coupon.end_date
+      %td= link_to 'Show', coupon
+      %td= link_to 'Edit', edit_coupon_path(coupon)
+      %td= link_to 'Destroy', coupon, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Coupon', new_coupon_path
