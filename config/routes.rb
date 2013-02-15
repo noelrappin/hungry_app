@@ -1,4 +1,13 @@
 HungryApp::Application.routes.draw do
+  resources :ratings
+
+
+  resources :restaurants
+
+
+  resources :users
+
+
   root :to => 'home#index'
 
   get "home/index"

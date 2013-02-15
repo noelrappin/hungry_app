@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @rating.user
+%p
+  %b Restaurant:
+  = @rating.restaurant
+%p
+  %b Score:
+  = @rating.score
+
+= link_to 'Edit', edit_rating_path(@rating)
+\|
+= link_to 'Back', ratings_path
