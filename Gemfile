@@ -79,6 +79,7 @@ group :development, :test do
   gem "fivemat"
   gem "pry"
   gem "awesome_print"
+  gem "launchy"
 end
 
 group :assets do
