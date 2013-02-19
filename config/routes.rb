@@ -1,4 +1,6 @@
 HungryApp::Application.routes.draw do
+  devise_for :users
+
   resources :coupons
 
 
